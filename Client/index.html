@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Records Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Health Records Dashboard</h1>
+    </header>
+
+    <section class="form-section">
+      <h2>Add New Record</h2>
+      <form id="recordForm">
+        <label for="name">Patient Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="report">Upload Report:</label>
+        <input type="file" id="report" name="report" accept="image/*">
+
+        <button type="submit">Add Record</button>
+      </form>
+    </section>
+
+    <section class="dashboard">
+      <h2>Health Records</h2>
+      <div id="records-container"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
