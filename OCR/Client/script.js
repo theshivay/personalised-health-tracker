@@ -13,30 +13,50 @@ async function fetchRecords() {
         }
         const records = await response.json();
 
+        
         // Clear existing records in the container
         recordsContainer.innerHTML = '';
 
         records.forEach((record) => {
             const recordDiv = document.createElement('div');
             recordDiv.classList.add('record');
-
+            const cleanedRecord = cleanObject(record);
             // Render Basic Info
+            let descriptionHTML = ''; // To hold dynamically generated description key-value pairs
+
+            // Assuming `record.description` is an object
+            if (cleanedRecord.description && typeof cleanedRecord.description === 'object') {
+                Object.entries(cleanedRecord.description).forEach(([key, value]) => {
+                    const cleanedKey = key.replace(/[{}"]/g, '');
+                    const cleanedValue = value.replace(/[{}"]/g, '');
+                    descriptionHTML += `<p>${cleanedKey}: ${cleanedValue}</p>`;
+                });
+            } else {
+                descriptionHTML = `<p><b>Description</b>: ${cleanedRecord.description || 'No description available.'}</p>`;
+            }
+
+            // Combine basic info with description dynamically
             recordDiv.innerHTML = `
-                <h3>${record.name}</h3>
-                <p>Age: ${record.age}</p>
-                <p>Description: ${record.description}</p>
+                <h2>${cleanedRecord.name}</h2>
+                <p><b>Age</b>: ${cleanedRecord.age}</p>
+                ${descriptionHTML}
             `;
 
             // Render Report Data (if available)
-            if (record.reportData && Object.keys(record.reportData).length > 0) {
+            if (cleanedRecord.reportData && Object.keys(cleanedRecord.reportData).length > 0) {
                 const reportDataDiv = document.createElement('div');
                 reportDataDiv.classList.add('report-data');
                 reportDataDiv.innerHTML = '<h4>Report Data:</h4>';
 
+                let count = 0;
                 // Display each key-value pair from reportData
-                Object.entries(record.reportData).forEach(([key, value]) => {
+                Object.entries(cleanedRecord.reportData).forEach(([key, value]) => {
                     const item = document.createElement('p');
                     item.textContent = `${key}: ${value}`;
+                    console.log("Step :   ", count++);
+                    console.log('Key:', key);
+                    console.log('Value:', value);
+                    console.log('Item Element:', item);
                     reportDataDiv.appendChild(item);
                 });
 
@@ -96,6 +116,23 @@ async function deleteRecord(id) {
     } catch (error) {
         console.error('Error deleting record:', error);
     }
+}
+
+// Function to recursively clean keys and values
+function cleanObject(obj) {
+    if (typeof obj === 'string') {
+        return obj.replace(/[{}"]/g, ''); // Remove unwanted characters from strings
+    } else if (Array.isArray(obj)) {
+        return obj.map((item) => cleanObject(item)); // Clean array elements
+    } else if (typeof obj === 'object' && obj !== null) {
+        const cleanedObj = {};
+        Object.entries(obj).forEach(([key, value]) => {
+            const cleanedKey = key.replace(/[{}"]/g, '');
+            cleanedObj[cleanedKey] = cleanObject(value); // Recursively clean values
+        });
+        return cleanedObj;
+    }
+    return obj; // Return the value as-is if it’s not a string, array, or object
 }
 
 // Initial fetch of records on page load

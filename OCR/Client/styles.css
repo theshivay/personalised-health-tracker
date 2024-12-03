@@ -79,7 +79,7 @@ body {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: calc(50% - 10px);
+    /* width: calc(50% - 10px); */
   }
   
   .record-card h3 {
