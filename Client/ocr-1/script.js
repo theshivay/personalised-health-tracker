@@ -2,7 +2,7 @@ const form = document.getElementById('recordForm');
 const recordsContainer = document.getElementById('records-container');
 
 // API Endpoint (Update this when you have the backend ready)
-const API_URL = 'http://localhost:5500/api/records'; // Adjust the port if needed
+const API_URL = 'https://mini-project-ubh1.onrender.com/api/records'; // Adjust the port if needed
 
 // Function to fetch and display records
 async function fetchRecords() {

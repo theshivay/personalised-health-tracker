@@ -10,7 +10,7 @@ function toggleForm() {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
   
-    const response = await fetch("http://localhost:5500/api/login", {
+    const response = await fetch("https://mini-project-ubh1.onrender.com/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -30,7 +30,7 @@ function toggleForm() {
     const email = document.getElementById("signup-email").value;
     const password = document.getElementById("signup-password").value;
   
-    const response = await fetch("http://localhost:5500/api/signup", {
+    const response = await fetch("https://mini-project-ubh1.onrender.com/api/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),
