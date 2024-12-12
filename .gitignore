@@ -1,5 +1,2 @@
-/OCR/Server/node_modules
-/OCR/Server/.env
-/Log-in/server/node_modules
-/Log-in/server/.env
-/
+/server/node_modules
+/server/.env
