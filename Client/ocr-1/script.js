@@ -52,7 +52,7 @@ async function fetchRecords() {
                 // Display each key-value pair from reportData
                 Object.entries(cleanedRecord.reportData).forEach(([key, value]) => {
                     const item = document.createElement('p');
-                    item.textContent = `${key}: ${value}`;
+                    item.innerHTML = `<b>${key} :<b> <u style = "font-weight: 100;">${value}<u>`;
                     console.log("Step :   ", count++);
                     console.log('Key:', key);
                     console.log('Value:', value);

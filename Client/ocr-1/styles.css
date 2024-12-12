@@ -1,129 +1,133 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9fbfc;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  header h1 {
-    color: #06a8e9;
-  }
-  
-  .form-section {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-section h2 {
-    margin-bottom: 10px;
-  }
-  
-  form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  form input, form textarea, form button {
-    width: 95%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  form button {
-    background-color: #05abfe;
-    color: white;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #05abfe;
-  }
-  
-  .dashboard {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dashboard h2 {
-    margin-bottom: 10px;
-  }
-  
-  #records-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  .record-card {
-    background: #f9f9f9;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    /* width: calc(50% - 10px); */
-  }
-  
-  .record-card h3 {
-    margin-top: 0;
-  }
-  
-  .record-card p {
-    margin: 5px 0;
-  }
-  .record {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
-    background-color: #f9f9f9;
-  }
-  
-  .record h3 {
-    margin: 0 0 8px;
-    color: #333;
-  }
-  
-  .record p {
-    margin: 4px 0;
-  }
-  
-  .report-data {
-    margin-top: 12px;
-    padding: 8px;
-    background-color: #fff;
-    border: 1px dashed #ccc;
-  }
-  
-  .delete-btn {
-    margin-top: 8px;
-    padding: 4px 12px;
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .delete-btn:hover {
-    background-color: #c0392b;
-  }
-  
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  background-color: linear-gradient(135deg, #ddc5c5, #115ee4);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #06a8e9;
+  /* color: linear-gradient(185deg, #f7f7f7, #115ee4);; */
+}
+
+.form-section {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea,
+form button {
+  width: 95%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #05abfe;
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #05abfe;
+}
+
+.dashboard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+  margin-bottom: 10px;
+}
+
+#records-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.record-card {
+  background: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  /* width: calc(50% - 10px); */
+}
+
+.record-card h3 {
+  margin-top: 0;
+}
+
+.record-card p {
+  margin: 5px 0;
+}
+
+.record {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
+}
+
+.record h3 {
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.record p {
+  margin: 4px 0;
+}
+
+.report-data {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px dashed #ccc;
+}
+
+.delete-btn {
+  margin-top: 8px;
+  padding: 4px 12px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
