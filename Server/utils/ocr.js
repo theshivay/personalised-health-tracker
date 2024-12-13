@@ -38,17 +38,6 @@ async function extractTextFromImage(imagePath) {
             // Preprocess the text to remove code block markers
             const cleanedText = rawText.replace(/```json|```/g, "").trim();
 
-            // Use RegExp to match key-value pairs more reliably
-            // const keyValuePattern = /^([^:]+):\s*(.+)$/gm;
-
-            // const keyValuePairs = {};
-            // cleanedText.match(keyValuePattern)?.forEach((line) => {
-            //     const [, key, value] = line.match(/^([^:]+):\s*(.+)$/) || [];
-            //     if (key && value) {
-            //         keyValuePairs[key.trim()] = value.trim();
-            //     }
-            // });
-
             // Beautify the JSON result
             const final_text = JSON.parse(cleanedText);
             console.log('Parsed Key-Value Pairs:', final_text);
